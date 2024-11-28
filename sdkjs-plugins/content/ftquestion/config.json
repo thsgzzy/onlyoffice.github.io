@@ -1,0 +1,31 @@
+{
+    "guid": "asc.{da92c56c-dd26-4b31-a391-90f7d8c72ecc}",
+    "name": "ftquestion",
+    "version": "1.0.0",
+    "variations": [
+        {
+            "url": "index.html",
+            "EditorsSupport": [
+                "word",
+                "slide"
+            ],
+            "buttons": [
+                {
+                    "primary": true,
+                    "text": "Ok"
+                },
+                {
+                    "primary": false,
+                    "text": "Cancel",
+                    "textLocale": {
+                        "de": "Abbrechen",
+                        "es": "Cancelar",
+                        "fr": "Annuler",
+                        "ru": "Отмена",
+                        "si": "අවලංගු"
+                    }
+                }
+            ]
+        }
+    ]
+}
