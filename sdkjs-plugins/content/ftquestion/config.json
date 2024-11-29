@@ -6,6 +6,7 @@
         {
             "description": "方田题块的插件第一步",
             "url": "index.html",
+            "icons": "resources/icon.png",
             "EditorsSupport": [
                 "word",
                 "slide"
