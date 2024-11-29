@@ -1,9 +1,10 @@
 {
     "guid": "asc.{da92c56c-dd26-4b31-a391-90f7d8c72ecc}",
-    "name": "ftquestion",
+    "name": "方田题块",
     "version": "1.0.0",
     "variations": [
         {
+            "description": "方田题块的插件第一步",
             "url": "index.html",
             "EditorsSupport": [
                 "word",
