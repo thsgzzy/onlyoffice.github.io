@@ -11,10 +11,8 @@
                 "word",
                 "slide"
             ],
-            "isViewer": true,
-            "isVisual": true,
-			"isModal": true,
-			"isInsideMode": true,
+            "isViewer": false,
+            "type": "panelRight",
 			"initDataType": "text",
 			"isUpdateOleOnResize": false,
 			"initOnSelectionChanged": true,
