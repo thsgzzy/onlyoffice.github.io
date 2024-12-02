@@ -6,12 +6,41 @@
         //   oParagraph.AddText("Hello world!")
         //   oDocument.InsertContent([oParagraph])
         // }, true)
+        window.Asc.plugin.executeMethod("AddToolbarMenuItem", [oToolbarMenuMainItem]);
 
-        // this.executeMethod("AddToolbarMenuItem", [getToolbarItems()]);
+        this.attachToolbarMenuClickEvent("insertText", function (data) {
+            this.callCommand(function () {
+              var oDocument = Api.GetDocument();
+      
+              // Create a new paragraph
+              var oParagraph = Api.CreateParagraph();
+      
+              // Add text to the paragraph
+              oParagraph.AddText("ONLYOFFICE Docs 8.1");
+      
+              // Style the text as a title
+              oParagraph.SetBold(true);              // Make the text bold
+              oParagraph.SetFontSize(24);            // Increase the font size
+              oParagraph.SetJc("center");         // Align text to the center
+      
+              // Insert the paragraph at the beginning of the document
+              oDocument.InsertContent([oParagraph],0);
+            });
+          });
 
     }
-    window.Asc.plugin.button = function button(id) {
-    }
+    window.Asc.plugin.button = function(id, windowId) {
+        if (!modalWindow)
+            return;
+    
+        if (windowId) {
+            switch (id) {
+                case -1:
+                default:
+                    window.Asc.plugin.executeMethod('CloseWindow', [windowId]);
+            }
+        }
+    };
 
     var oToolbarMenuItem = {
         "id": "FtMenuItem",
@@ -40,28 +69,4 @@
         "guid": "asc.{da92c56c-dd26-4b31-a391-90f7d8c72ecc}",
         "tabs": [oToolbarMenuTab]
     };
-    window.Asc.plugin.executeMethod ("AddToolbarMenuItem", [oToolbarMenuMainItem]);
-
-    // function getToolbarItems() {
-    //   let items = {
-    //     guid: window.Asc.plugin.info.guid,
-    //     tabs: [{
-    //       id: "tab_1",
-    //       text: "Insert options",
-    //       items: [
-    //         {
-    //           id: "insertQuestion",
-    //           type: "button",
-    //           text: "Insert Question",
-    //           hint: "insert question into the document",
-    //           icons: "resources/buttons/icon.png", 
-    //           lockInViewMode: true,
-    //           enableToggle: false,
-    //           separator: false
-    //         },
-    //       ]
-    //     }]
-    //   };
-    //   return items
-    // }
 })(window, undefined);
