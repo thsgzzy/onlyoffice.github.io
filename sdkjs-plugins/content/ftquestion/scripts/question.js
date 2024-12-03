@@ -5,29 +5,24 @@
         this.attachToolbarMenuClickEvent("insertText", function (data) {
             this.callCommand(function () {
                 var oDocument = Api.GetDocument();
-
                 // Create a new paragraph
                 var oParagraph = Api.CreateParagraph();
-
                 // Add text to the paragraph
-                oParagraph.AddText("ONLYOFFICE Docs 8.1");
-
+                oParagraph.AddText(" ONLYOFFICE Docs 8.1 ");
+                oParagraph.AddText(" 新增文本 ");
                 // Style the text as a title
                 oParagraph.SetBold(true);              // Make the text bold
                 oParagraph.SetFontSize(24);            // Increase the font size
-                oParagraph.SetJc("center");         // Align text to the center
-
+                // oParagraph.SetJc("center");         // Align text to the center
                 // Insert the paragraph at the beginning of the document
                 oDocument.InsertContent([oParagraph], 0);
+                oDocument.AddMathEquation("e^x = 1 + x + \\frac{x^2}{2} + \\frac{x^3}{6} + \\cdots = \\sum_{n\\geq 0} \\frac{x^n}{n!}", "latex");
             });
         });
 
 
     }
     window.Asc.plugin.button = function (id, windowId) {
-        if (!modalWindow)
-            return;
-
         if (windowId) {
             switch (id) {
                 case -1:
